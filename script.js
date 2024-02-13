@@ -36,15 +36,15 @@ function addBookToLibrary(title, author, pages, read) {
 }
 
 function getBooksFromUser(e) {
-  e.preventDefault()
-  title = "Marvels"
-  author = "J.K. Rowling"
-  pages = "580"
-  read = "Yes I have"
+  e.preventDefault();
+  title = e.target[1].value;
+  author = e.target[2].value;
+  pages = e.target[3].value;
+  read = e.target[4].value;
   addBookToLibrary(title, author, pages, read);
 }
 
-const btnAddBook = document.querySelector(".button__add");
+const btnAddBook = document.querySelector(".form");
 const bookShowCase = document.querySelector(".book__showcase");
 
-btnAddBook.addEventListener("click", (e) => getBooksFromUser(e));
+btnAddBook.addEventListener("submit", (e) => getBooksFromUser(e));

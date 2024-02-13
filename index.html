@@ -1,52 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="./style.css" />
-</head>
+  </head>
 
-<body>
+  <body>
     <div class="row">
-        <h1 class="title">Bookstore Tracker</h1>
+      <h1 class="title">Bookstore Tracker</h1>
 
-        <form class="form" action="https://httpbin.org/post" method="post">
+      <form class="form" action="https://httpbin.org/post" method="post">
+        <fieldset>
+          <legend>Add Book details</legend>
 
-            <fieldset>
-                <legend>Add Book details</legend>
+          <div class="form__box">
+            <label for="title">Title of Book</label>
+            <input type="text" id="title" name="title" />
+          </div>
 
-                <div class="form__box">
-                    <label for="title">Title of Book</label>
-                    <input type="text" id="title" name="title" />
-                </div>
+          <div class="form__box">
+            <label for="author">Author of Book</label>
+            <input type="text" id="author" name="author" />
+          </div>
 
-                <div class="form__box">
-                    <label for="author">Author of Book</label>
-                    <input type="text" id="author" name="author" />
-                </div>
+          <div class="form__box">
+            <label for="pages">Number of Pages</label>
+            <input type="text" name="pages" />
+          </div>
 
-                <div class="form__box">
-                    <label for="pages">Number of Pages</label>
-                    <input type="text" name="pages" />
-                </div>
+          <div class="form__box">
+            <label for="read">Read the book?</label>
+            <input type="text" id="read" name="read" />
+          </div>
+        </fieldset>
+        <button class="button__add">Add to Bookstore</button>
+      </form>
 
-                <div class="form__box">
-                    <label for="read">Read the book?</label>
-                    <input type="text" id="read" name="read" />
-                </div>
-            </fieldset>
-            <button class="button__add">Add to Bookstore</button>
-        </form>
-
-
-        <div class="book__showcase">
-            <h2>Books will be added here</h2>
-        </div>
+      <div class="book__showcase">
+        <h2 class="book__card">Books will be added here</h2>
+      </div>
     </div>
 
     <script src="./script.js"></script>
-</body>
-
+  </body>
 </html>

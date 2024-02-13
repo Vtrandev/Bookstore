@@ -39,3 +39,8 @@ fieldset {
 .form__box {
     padding: 12px;
 }
+
+input {
+    padding: 4px;
+    border-radius: 5px;
+}
