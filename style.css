@@ -23,3 +23,19 @@
 .book__card {
     margin: 20px;
 }
+
+fieldset {
+    margin: 12px;
+    padding: 12px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+}
+
+.form__box {
+    padding: 12px;
+}

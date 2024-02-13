@@ -1,13 +1,5 @@
 const myLibrary = [];
-
-function showBooks(book) {
-  if (myLibrary.length > 0) {
-    console.log(book.title);
-    console.log(book.author);
-  }
-
-  return `<p>${book.title}</p>`;
-}
+let htmlString = "";
 
 function Book(title, author, pages, read) {
   // the constructor...
@@ -20,16 +12,39 @@ function Book(title, author, pages, read) {
   };
 }
 
+function showBooks(book) {
+  htmlString = "";
+  myLibrary.forEach(
+    (e) =>
+      (htmlString += `<div class="book__card">
+                <h2>Title: ${e.title}</h2>
+                <p>Author: ${e.author}</p>
+                <p>Pages: ${e.pages}</p>
+                <p>Read: ${e.read}</p>
+              </div>`)
+  );
+  return htmlString;
+}
+
 function addBookToLibrary(title, author, pages, read) {
   // do stuff here
-  const newBook = new Book("Hobbits", "JJ Rowling", 580, "Read");
-
+  const newBook = new Book(title, author, pages, read);
   myLibrary.push(newBook);
+  showBooks(myLibrary);
+  bookShowCase.innerHTML = htmlString;
+  // myLibrary.map((e) => showBooks(e)).join("");
+}
 
-  bookShowCase.innerHTML = myLibrary.forEach((e) => showBooks(e));
+function getBooksFromUser(e) {
+  e.preventDefault()
+  title = "Marvels"
+  author = "J.K. Rowling"
+  pages = "580"
+  read = "Yes I have"
+  addBookToLibrary(title, author, pages, read);
 }
 
 const btnAddBook = document.querySelector(".button__add");
 const bookShowCase = document.querySelector(".book__showcase");
 
-btnAddBook.addEventListener("click", addBookToLibrary);
+btnAddBook.addEventListener("click", (e) => getBooksFromUser(e));
