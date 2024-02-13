@@ -1,0 +1,25 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    border: 1px solid black
+}
+
+.row {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+}
+
+.book__showcase {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.book__card {
+    margin: 20px;
+}
