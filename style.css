@@ -2,7 +2,7 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    border: 1px solid black
+    /* border: 1px solid black */
 }
 
 .row {
@@ -15,6 +15,10 @@
     justify-content: center;
 }
 
+.card__item {
+    padding: 4px 12px;
+}
+
 .book__showcase {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -22,6 +26,8 @@
 
 .book__card {
     margin: 20px;
+    border: 2px solid black;
+    padding: 4px 12px;
 }
 
 fieldset {
