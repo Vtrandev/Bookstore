@@ -15,6 +15,7 @@ function Book(title, author, pages, read, id) {
 }
 
 function showBooks() {
+  // Display array of books...
   htmlString = "";
   myLibrary.forEach(
     (e) =>
@@ -23,27 +24,23 @@ function showBooks() {
                 <p class="card__item">Author: ${e.author}</p>
                 <p class="card__item">Pages: ${e.pages}</p>
                 <p class="card__item">Read: ${e.read}</p>
-                <p class="card__item">ID: ${e.id}</p>
                 <button onclick="removeBooks(${e.id})">Remove</button>
               </div>`)
   );
-  
+
   bookShowCase.innerHTML = htmlString;
 }
 
 function removeBooks(bookId) {
-  console.log(`Removed book: ${bookId}`)
   myLibrary = myLibrary.filter(book => book.id !== bookId)
-  console.log(myLibrary);
   showBooks();
 }
 
 function addBookToLibrary(title, author, pages, read, id) {
-  // do stuff here
+  // Create a new book and add it to array
   const newBook = new Book(title, author, pages, read, id);
   myLibrary.push(newBook);
   showBooks();
-  // myLibrary.map((e) => showBooks(e)).join("");
 }
 
 function getBooksFromUser(e) {

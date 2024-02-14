@@ -33,13 +33,13 @@
 fieldset {
     margin: 12px;
     padding: 12px;
+    display: flex;
+    flex-direction: column;
 }
 
 .form {
     display: flex;
-    flex-direction: column;
     justify-content: center;
-    align-items: start;
 }
 
 .form__box {
@@ -47,6 +47,22 @@ fieldset {
 }
 
 input {
-    padding: 4px;
-    border-radius: 5px;
+    padding: 4px 8px;
+    border-radius: 10px;
+    width: 100%;
+}
+
+.button__add {
+    background-color: lightgreen;
+    padding: 4px 8px;
+    border: none;
+    border-radius: 10px;
+    align-self: center;
+}
+
+.button__add:hover {
+    cursor: pointer;
+}
+.button__add:active {
+    background-color: green;
 }
