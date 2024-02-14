@@ -14,8 +14,21 @@ function Book(title, author, pages, read, id) {
   };
 }
 
+function toggleRead(readStatus) {
+  // Toggle the Read status of the book..
+  let index = myLibrary.findIndex(e => e.id === readStatus)
+  let status = myLibrary[index].read.toLowerCase();
+  if (status === "yes") {
+    myLibrary[index].read = "No"
+  }
+  else {
+    myLibrary[index].read = "Yes"
+  }
+  showBooks();
+}
+
 function showBooks() {
-  // Display array of books...
+  // Updates the display array of books on the DOM...
   htmlString = "";
   myLibrary.forEach(
     (e) =>
@@ -24,6 +37,7 @@ function showBooks() {
                 <p class="card__item">Author: ${e.author}</p>
                 <p class="card__item">Pages: ${e.pages}</p>
                 <p class="card__item">Read: ${e.read}</p>
+                <button onclick="toggleRead(${e.id})">Status change</button>
                 <button onclick="removeBooks(${e.id})">Remove</button>
               </div>`)
   );

@@ -52,7 +52,7 @@ input {
     width: 100%;
 }
 
-.button__add {
+button {
     background-color: lightgreen;
     padding: 4px 8px;
     border: none;
@@ -60,9 +60,9 @@ input {
     align-self: center;
 }
 
-.button__add:hover {
+button:hover {
     cursor: pointer;
 }
-.button__add:active {
+button:active {
     background-color: green;
 }
